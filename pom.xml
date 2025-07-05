@@ -14,12 +14,21 @@
        <maven.compiler.target>1.8</maven.compiler.target>
    </properties>
    <build>
+      <resources>
+         <resource>
+            <directory>WebContent</directory>
+            <includes>
+               <include>**/*.*</include>
+            </includes>
+         </resource>
+      </resources>
       <plugins>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <version>3.3.2</version>
             <configuration>
+               <warSourceDirectory>WebContent</warSourceDirectory>
                <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
          </plugin>
