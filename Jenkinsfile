@@ -5,7 +5,7 @@ pipeline {
 
         stage('Git Clone') {
             steps {
-                git branch: 'feature-1.1', url: 'https://github.com/eligetipavankumar/sabear_simplecutomerapp.git'
+                git branch: 'feature-1.1', url: 'https://github.com/eligetipavankumar/pavan_simplecutomerapp.git'
             }
         }
 
@@ -51,7 +51,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'tomcat-server', usernameVariable: 'TOMCAT_USER', passwordVariable: 'TOMCAT_PASS')]) {
                     sh '''
-                        curl -T target/*.war "http://${TOMCAT_USER}:${TOMCAT_PASS}@13.234.204.49:8080/manager/text/deploy?path=/customerapp&update=true"
+                        curl -T target/*.war "http://${TOMCAT_USER}:${TOMCAT_PASS}@3.111.147.106:8080/manager/text/deploy?path=/customerapp&update=true"
                     '''
                 }
             }
